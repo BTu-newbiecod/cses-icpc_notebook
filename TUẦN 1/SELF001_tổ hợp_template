@@ -1,0 +1,11 @@
+// Tính tổ hợp C(k, n) bằng phân số – dùng cho xác suất, kỳ vọng (chống tràn)
+long double C(int k, int n) {
+    if (k > n) return 0;
+    if (k == 0 || k == n) return 1;
+    long double res = 1;
+    for (int i = 1; i <= k; i++) {
+        res *= (n - i + 1)/i;
+    }
+    return res;
+}
+
